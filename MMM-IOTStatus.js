@@ -53,6 +53,12 @@ Module.register("MMM-IOTStatus", {
 				} else if( sensor.value === 'unlocked' || sensor.value === 'open'){
 					iconClass = `${iconClass} zmdi-lock-open`;
 					rowClass = `${rowClass} error`;
+				} else if( sensor.value === 'on'){
+					iconClass = `${iconClass} zmdi-power`;
+					rowClass = `${rowClass} error`;
+				} else if( sensor.value === 'off'){
+					iconClass = `${iconClass} zmdi-minus-circle-outline`;
+					rowClass = `${rowClass} ok`;
 				}
 
 				return `
