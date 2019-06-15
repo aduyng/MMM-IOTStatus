@@ -1,8 +1,10 @@
 version: 2
-defaults:
+
+defaults: &defaults
   working_directory: ~/MMM-IOTStatus
   docker: 
     - image: circleci/node:lts
+
 jobs:
   build:
     <<: *defaults
