@@ -11,23 +11,23 @@ The project uses a thingLayer, a Smartthings SmartApp to report the device statu
 ![Some devices red](./docs/images/some-devices-red.png)
 
 ## Installation
-### Setup the MagicMirror module
+### 1. Setup the MagicMirror module
 ```bash
 cd ~/MagicMirror/modules
 git clone https://github.com/aduyng/MMM-IOTStatus.git
 cd MMM-IOTStatus
 npm install --production
 ```
-### 1. Setup Firebase Realtime Database
+### 2. Setup Firebase Realtime Database
 You will need a realtime database for Smartthings to push the device status to. Follow this tutorial, https://firebase.google.com/docs/web/setup, to setup a Firebase project and a realtime database.
 
 Take note of the project configuration especially the realtime database URL.
 
-### 2. Setup Smartthings
+### 3. Setup Smartthings
 I modified the original of [thingLayer](https://github.com/jodyalbritton/smartthings/blob/master/thingLayer.groovy) SmartApp developed [Jody Albritton](https://github.com/jodyalbritton) to report my device status to Firebase. 
 
 1. Install the modified version of thingLayer SmartApp ([./smartthings/thingLayer.groovy](./smartthings/thingLayer.groovy)) via Smartthings IDE
-1. Switch to App Settings, enter the realtime database URL on step 1. above to the value of `firebaseUrl`. 
+1. Switch to App Settings, enter the realtime database URL on step 2. above to the value of `firebaseUrl`. 
 
 thingLayer will keep pushing changes to the path `/iot` of your realtime database above. 
 

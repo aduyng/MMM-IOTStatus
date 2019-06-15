@@ -21,7 +21,6 @@ Module.register('MMM-IOTStatus', {
   },
 
   start: function() {
-    console.log(`[${this.name}] started`);
     this.sendConfig();
   },
 
