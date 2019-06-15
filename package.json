@@ -1,10 +1,8 @@
 {
   "name": "mmm-iotstatus",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "dependencies": {
-    "firebase": "^6.1.0",
-    "lodash": "^4.17.11",
-    "material-design-iconic-font": "^2.2.0"
+    "firebase": "^6.1.0"
   },
   "scripts": {
     "eslint": "eslint . --quiet"
