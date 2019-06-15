@@ -1,6 +1,6 @@
 {
-  "name": "MMM-IOTStatus",
-  "version": "0.2.2",
+  "name": "mmm-iotstatus",
+  "version": "0.2.3",
   "dependencies": {
     "firebase": "^6.1.0",
     "lodash": "^4.17.11",
