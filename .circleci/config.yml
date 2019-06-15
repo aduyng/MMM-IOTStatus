@@ -21,3 +21,14 @@ jobs:
       - run:
           name: eslint
           command: npm run eslint
+  deploy:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/MMM-IOTStatus
+      - run:
+          name: Authenticate with registry
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/MMM-IOTStatus/.npmrc
+      - run:
+          name: Publish package
+          command: npm publish
