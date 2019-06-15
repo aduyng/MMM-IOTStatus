@@ -1,5 +1,6 @@
 {
   "name": "@aduyng/MMM-IOTStatus",
+  "version": "0.2.1",
   "dependencies": {
     "firebase": "^6.1.0",
     "lodash": "^4.17.11",
