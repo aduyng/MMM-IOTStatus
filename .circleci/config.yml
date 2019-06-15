@@ -1,7 +1,7 @@
 version: 2
 
 defaults: &defaults
-  working_directory: ~/MMM-IOTStatus
+  working_directory: ~/repo
   docker: 
     - image: circleci/node:lts
 
@@ -25,14 +25,18 @@ jobs:
       - run:
           name: eslint
           command: npm run eslint
+
+      - persist_to_workspace:
+          root: ~/repo
+          paths: .
   deploy:
     <<: *defaults
     steps:
       - attach_workspace:
-          at: ~/MMM-IOTStatus
+          at: ~/repo
       - run:
           name: Authenticate with registry
-          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/MMM-IOTStatus/.npmrc
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
       - run:
           name: Publish package
           command: npm publish
